@@ -1,0 +1,49 @@
+h4{
+    text-align: center;
+}
+.riya {
+   
+    display: flex;
+ }
+ 
+ .siya {
+   padding-inline: 20px;  
+ 
+ }
+ .img{
+     display: flex;
+     margin-left: 20px;
+     
+ }
+ .page2 {
+     position: relative;
+     top: 60px;
+     left: -80px;
+ 
+ }
+ .priya{
+     display: flex;
+     
+     
+ }
+ 
+ .dip{
+     margin-left: 50%;
+     background-image: url(../../../assets/why-choose-bg.jpg);
+     background-size: contain;
+     color:white;
+     text-align: center;
+ }
+ 
+ .greet{
+     display: flex;
+     justify-content: space-around;
+ 
+ }
+ 
+ 
+ .preet{
+     display: flex;
+     justify-content: space-around;
+ 
+ }

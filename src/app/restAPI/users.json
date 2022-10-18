@@ -1,0 +1,26 @@
+[
+  {
+    "name": "pooja",
+    "email": "pooja1@gmail.com",
+    "mbno": 9685741230,
+    "pass": "321",
+    "cpass": "321",
+    "id": 1
+  },
+  {
+    "name": "Dipak Javane",
+    "email": "dipakjavane1996@gmail.vom",
+    "mbno": 1234567890,
+    "pass": "123",
+    "cpass": "123",
+    "id": 2
+  },
+  {
+    "name": "ajay",
+    "email": "aj1@gmail.com",
+    "mbno": 9856742130,
+    "pass": "456",
+    "cpass": "456",
+    "id": 3
+  }
+]

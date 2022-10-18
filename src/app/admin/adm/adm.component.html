@@ -1,0 +1,88 @@
+<div class="first">
+    <button class="btn btn-danger" (click)="onGetData()"> Get Data </button>
+</div>
+
+<table class="table table-stripped" *ngIf="showtable == true">
+    <tr>
+        <th>#id</th>
+        <th>Name</th>
+        <th>Email ID</th>
+        <th>Mobile No.</th>
+        <th>Password</th>
+        <th>Confirm Password</th>
+        <th> <button class="btn btn-outline-primary" (click)="onadd()">Add New User</button></th>
+    </tr>
+   
+
+    <tr *ngFor="let i of data">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.mbno}}</td>
+        <td>{{i.pass}}</td>
+        <td>{{i.cpass}}</td>
+        <td><button  type="button"  class="btn btn-outline-danger" (click)="onDelete(i)">Delete</button> &nbsp;
+        <button  type="button" class="btn btn-outline-warning" (click)="onEdit(i)">Edit</button></td>
+    </tr>
+</table>
+
+<div class="formInput" *ngIf="showform">
+    <form name="myform" #frm="ngForm" (ngSubmit)="frm.form.valid && onSignIn(frm)">
+
+        <div class="form-group">
+            <label><b>Enter Your name: </b></label>
+            <input type="text" name="name" class="form-control" #name="ngModel" ngModel required
+                [ngClass]="{'is-invalid':frm.submitted && name.invalid}" [(ngModel)]="nm">
+            <p *ngIf="frm.submitted && name.invalid" class="invalid-feedback" >Mandatory Field</p>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label><b>Enter Email ID: </b></label>
+            <input type="email" name="email" class="form-control" #email="ngModel" ngModel required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                [ngClass]="{'is-invalid':frm.submitted && email.invalid}" [(ngModel)]="em">
+
+            <p *ngIf="email.errors?.['required']" class="invalid-feedback">Mandatory Field</p>
+            <p *ngIf="email.errors?.['pattern']" class="invalid-feedback">Invalid email ID</p>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label><b>Enter Your Mobile Number : </b></label>
+
+            <input type="number" name="mbno" class="form-control" #mbno="ngModel" ngModel required
+                pattern="^((\\+91-?)|0)?[0-9]{10}$" [ngClass]="{'is-invalid':frm.submitted && mbno.invalid}"
+                placeholder="+91-  Mobile Number" [(ngModel)]="mb">
+
+            <p *ngIf="mbno.errors?.['required']" class="invalid-feedback">
+                This Field Can't be empty.
+            </p>
+            <p *ngIf="mbno.errors?.['pattern']" class="invalid-feedback">
+                Invalid Mobile number
+            </p>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label><b>Enter Password: </b></label>
+            <input type="text" name="pass" class="form-control" #pass="ngModel" ngModel [(ngModel)]="ps">
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label><b>Confirm Password: </b></label>
+            <input type="password" name="cpass" class="form-control" #cpass="ngModel" ngModel [(ngModel)]="cp">
+        </div>
+        <br>
+        <!-- <button class="btn btn-primary" *ngIf="hideform">Add</button> -->
+        <br>
+        <button class="btn btn-primary " *ngIf="showsubmit">Submit</button>&nbsp;
+        <span *ngIf="showform">
+        <button type="button" class="btn btn-light" (click)="onUpdate(frm)" *ngIf="showupdt ==true">Update</button> &nbsp;</span>
+        <button type="reset" class="btn btn-light">Clear</button>
+        <!-- <button type="reset" class="btn btn-primary" (click)="onClear()">clear</button> -->
+        <!-- <button class="btn btn-primary disabled" type="submit" *ngIf="!flag">Sign In</button> -->
+    </form>
+</div>
+

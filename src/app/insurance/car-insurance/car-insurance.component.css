@@ -1,0 +1,298 @@
+#first {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 10px;
+  }
+  
+  ul li{
+    display: inline;
+  }
+h5{
+    font-weight: bold;
+    font-size: 23px;
+    
+}
+
+.car{
+  background-color: #f6f7fb;
+}
+
+.center{
+    text-align: center;
+  }
+
+ .side{
+    text-align:left;
+    
+  }
+
+  h3{
+   
+    font-weight: bold;
+    color:#002E5B;
+} 
+
+.section1row {
+    padding: 1.5%;
+}
+
+/* .container {
+    background-color: violet;
+} */
+
+.section1 {
+    background-color: #f6f7fb;
+
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section1row {
+    padding: 1.5%;
+}
+
+.section1container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+
+.mycard {
+    /* background-color: yellowgreen; */
+    text-align: center;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+hr {
+    width: 150px;
+    margin: auto;
+    height: 10px;
+    color: black;
+    border-top: 2px solid;
+}
+
+.img-main {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 50%;
+    width: auto;
+    padding: 1%;
+    background-color: #86aaba;
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 50%;
+    width: auto;
+    padding: 8px;
+    /* background-color: yellow; */
+}
+
+.main-img {
+    height: auto;
+    max-width: 45%;
+}
+
+.cardSep-img {
+    height: auto;
+    max-width: 30%;
+    /* visibility: hidden; */
+}
+
+.cardSep-img {
+    border-radius: 50%;
+    /* background-color: aqua; */
+}
+
+.card-content {
+    text-align: center;
+}
+
+.learn-more {
+    color: rgb(2, 126, 174);
+    text-decoration: none;
+}
+
+.blog-more {
+    padding: 5px;
+}
+
+.blog-more-anchor {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.blog-more-div {
+    /* height: 260px; */
+    background-color: #c594e6;
+    border-radius: 10px;
+}
+
+.learn-more:hover {
+    color: rgb(0, 58, 81);
+    /* transition: transform .2s;
+    transform: scale(1.1); */
+}
+
+.blog-more-div:hover {
+    transition: transform .2s;
+    transform: scale(1.1);
+}
+
+.quote-text {
+    font-size: 25px;
+    font-style: italic;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.byauthor {
+    font-size: 20px;
+}
+
+.quote-img-main {
+    width: 50px;
+}
+
+.section3left {
+    border: 20px solid;
+    border-color: #f6f7fb;
+    text-align: left;
+}
+
+.section3right {
+    background-color: #1cbaab;
+    border: 20px solid;
+    border-color: #f6f7fb;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px; */
+}
+
+.section3right-img {
+    width: 80%;
+    padding: 15px;
+}
+
+.divide-expert {
+    margin: 10px;
+}
+
+.blog-div {
+    width: 100%;
+}
+
+.blog-img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.care-img {
+    height: 100%;
+    /* color: black; */
+}
+
+.blog1row {
+    padding: 25px;
+}
+
+.section5-div {
+    padding: 15px;
+}
+
+.title{
+    color: Solid black;
+    font-size: 30px;
+    font-family: system-ui;
+    
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 10px;
+}
+
+
+
+ul li{
+    display: inline;
+  }
+
+
+/* .title{
+    color: Solid black;
+    font-size: 30px;
+    font-family: system-ui;
+    
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 10px;
+}
+
+
+
+ul li{
+    display: inline;
+  }
+
+
+h4{
+    color:solid black;
+    font-weight: bold;
+}  
+
+h3{
+    color:solid black;
+    font-weight: bold;
+}  
+
+.section3left {
+    border: 20px solid;
+    border-color: #f6f7fb;
+    text-align: left;
+    margin-left: 25%;
+}
+
+.new-plan-form{
+    margin-left: 33%;  
+} */

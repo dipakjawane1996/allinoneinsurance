@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+           Insurance Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="Health-Products">Health Insurance</a></li>
+            <li><a class="dropdown-item" routerLink="life-insurance">Life Insurance</a></li>
+            <li><a class="dropdown-item" routerLink="car">Car Insurance</a></li>
+            <li><a class="dropdown-item" routerLink="home">Home Insurance</a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+           Renew Your Policy
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="liferenewal">Life Renewal</a></li>
+            <li><a class="dropdown-item" routerLink="healthrenewal">Health Renewal</a></li>
+            <li><a class="dropdown-item"  routerLink="motorrenewal">Motor Renewal</a></li>         
+          </ul>
+        </li>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+           Claim
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item"  routerLink="newclaim">File New Claim</a></li>  
+            <li><a class="dropdown-item" routerLink="insurer">Claim is already file with Insurer</a></li>
+            <li><a class="dropdown-item" routerLink="know">Know more about filing claim</a></li>
+            <li><a class="dropdown-item"  routerLink="track">Track existing claim</a></li>         
+                   
+          </ul>
+        </li>
+           
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Support
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <a class="dropdown-item" routerLink="/support/contact-us">Contact Us</a>
+              <a class="dropdown-item" routerLink="/support/about-us">About Us</a>
+              <!-- <a class="dropdown-item" routerLink="">FAQ</a> -->
+          </div>
+      </li>
+      </div>
+
+    </div>
+    <div>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary me-3" type="submit">Search</button>
+      </form>
+    </div>
+    <button class="btn btn-outline-info me-3" data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="login">
+      Login</button>
+    <button class="btn btn-outline-info me-3" data-bs-toggle="modal" data-bs-target="#signupModal"
+      routerLink="register"> Sign Up</button>
+
+      <button class="btn btn-outline-info me-3" data-bs-toggle="modal" data-bs-target="#signupModal"
+      routerLink="adm"> Admin Login</button>
+
+      <i class="pi pi-user-edit" routerLink="profile" style="font-size: 2rem; color: white;"></i>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

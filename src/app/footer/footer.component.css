@@ -1,0 +1,56 @@
+.footer {
+    background-color: rgb(30, 30, 30);
+    color: floralwhite;
+}
+
+a {
+    text-decoration: none;
+    color: floralwhite;
+}
+
+.tnc>p {
+    font-size: 9px;
+}
+
+ul {
+    list-style: none;
+    display: block;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+}
+
+.footEle {
+    padding: 23px;
+    /* height: 70px; */
+    background-color: rgb(69, 67, 67);
+    display: flex;
+    align-items: center;
+}
+
+.endFoot {
+    display: flex;
+    align-items: center;
+}
+
+.footEles {
+    color: floralwhite;
+    margin: 0;
+}
+
+li:hover,
+a:hover {
+    color: cornflowerblue;
+}
+
+.endTnC {
+    background-color: rgb(30, 30, 30);
+}
+
+.endTnCP {
+    text-align: center;
+    color: floralwhite;
+    font-size: 10px;
+}

@@ -1,0 +1,83 @@
+
+
+
+<div style="display:flex; flex-direction:row; margin: 10%; ">
+    <div style="height:150vh; width:20vw;" >
+    <img src="../../../assets/profile.webp" style="height:40vh; width: 20vw; margin:2%;">
+    </div>
+
+    <div class="formInput" style="height:120vh; width:40vw;">
+        <ul class="list-group">
+            <li class="list-group-item"><b>Name :</b> {{data.name}}</li>
+            <li class="list-group-item"><b>Email:</b> {{data.email}}</li>
+            <li class="list-group-item"><b>Mobile Number:</b> {{data.mbno}}</li>
+            <li class="list-group-item"><b>Profession : </b>{{data.prof}}</li>
+            <li class="list-group-item"><b>Address :</b> {{data.add}}</li>
+        </ul>
+        <br>
+        <button class="btn btn-info" (click)="onEdit()">Edit Profile</button>
+        <br>
+
+        <div *ngIf="showEditform == true">
+            <form name="myform" #frm="ngForm" (ngSubmit)="frm.form.valid && onSignIn(frm)">
+
+                <div class="form-group">
+                    <label><b>Enter Your name: </b></label>
+                    <input type="text" name="name" class="form-control" #name="ngModel" ngModel required
+                        [ngClass]="{'is-invalid':frm.submitted && name.invalid}" >
+
+                    <p *ngIf="frm.submitted && name.invalid" class="invalid-feedback">Mandatory Field</p>
+                </div>
+
+                <br>
+                <div class="form-group">
+                    <label><b>Enter Email ID: </b></label>
+                    <input type="email" name="email" class="form-control" #email="ngModel" ngModel required
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                        [ngClass]="{'is-invalid':frm.submitted && email.invalid}">
+
+                    <p *ngIf="email.errors?.['required']" class="invalid-feedback">Mandatory Field</p>
+                    <p *ngIf="email.errors?.['pattern']" class="invalid-feedback">Invalid email ID</p>
+                </div>
+
+                <br>
+                <div class="form-group">
+                    <label><b>Enter Your Mobile Number : </b></label>
+
+                    <input type="number" name="mbno" class="form-control" #mbno="ngModel" ngModel required
+                        pattern="^((\\+91-?)|0)?[0-9]{10}$" [ngClass]="{'is-invalid':frm.submitted && mbno.invalid}"
+                        placeholder="+91-  Mobile Number">
+
+                    <p *ngIf="mbno.errors?.['required']" class="invalid-feedback">
+                        This Field Can't be empty.
+                    </p>
+                    <p *ngIf="mbno.errors?.['pattern']" class="invalid-feedback">
+                        Invalid Mobile number
+                    </p>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label><b>Enter Your Profession: </b></label>
+                    <input type="text" name="prof" class="form-control" #prof="ngModel" ngModel required
+                        [ngClass]="{'is-invalid':frm.submitted && prof.invalid}">
+
+                    <p *ngIf="frm.submitted && prof.invalid" class="invalid-feedback">Mandatory Field</p>
+                </div>
+
+                <br>
+                <div class="form-group">
+                    <label><b>Enter Your Address: </b></label>
+                    <input type="text" name="add" class="form-control" #add="ngModel" ngModel required
+                        [ngClass]="{'is-invalid':frm.submitted && add.invalid}">
+
+                    <p *ngIf="frm.submitted && add.invalid" class="invalid-feedback">Mandatory Field</p>
+                </div>
+
+                <br>
+                <button class="btn btn-primary ">Update Profile</button>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+
+
+<form name="OTPform" #frm="ngForm" (ngSubmit)="frm.form.valid && onGetOTP(frm)" [ngClass]="cssclass">
+    
+   
+   <div class="form-group">
+    <label><b>Enter OTP : </b></label>
+    
+    <input type="number" name="otp" class="form-control" #otp="ngModel" ngModel required pattern="^((\\+91-?)|0)?[0-9]{4}$" [ngClass]="{'is-invalid':frm.submitted && otp.invalid}" >
+    <p>Didn't receive OTP yet? <a href="#">Resend OTP</a></p>
+    <p *ngIf="otp.errors?.['required']" class="invalid-feedback">
+        This Field Can't be empty.
+    </p>
+    <p *ngIf="otp.errors?.['pattern']" class="invalid-feedback">
+        Incorrect OTP
+    </p>
+   </div>
+
+   <br>
+  
+   <div class="d-grid gap-2">
+   <button type="submit" class="btn btn-primary">Login</button>
+   
+    </div>
+</form>

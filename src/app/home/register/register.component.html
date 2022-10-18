@@ -1,0 +1,57 @@
+<div class="formInput">
+<form name="myform" #frm="ngForm" (ngSubmit)="frm.form.valid && onSignIn(frm)">
+
+    <div class="form-group">
+        <label><b>Enter Your name: </b></label>
+        <input type="text" name="name" class="form-control" #name="ngModel" ngModel required [ngClass]="{'is-invalid':frm.submitted && name.invalid}">
+
+        <p *ngIf="frm.submitted && name.invalid" class="invalid-feedback">Mandatory Field</p>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label><b>Enter Email ID: </b></label>
+        <input type="email" name="email" class="form-control" #email="ngModel" ngModel required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [ngClass]="{'is-invalid':frm.submitted && email.invalid}">
+
+        <p *ngIf="email.errors?.['required']" class="invalid-feedback">Mandatory Field</p>
+        <p *ngIf="email.errors?.['pattern']" class="invalid-feedback">Invalid email ID</p>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label><b>Enter Your Mobile Number : </b></label>
+
+        <input type="number" name="mbno" class="form-control" #mbno="ngModel" ngModel required
+            pattern="^((\\+91-?)|0)?[0-9]{10}$" [ngClass]="{'is-invalid':frm.submitted && mbno.invalid}"
+            placeholder="+91-  Mobile Number">
+
+        <p *ngIf="mbno.errors?.['required']" class="invalid-feedback">
+            This Field Can't be empty.
+        </p>
+        <p *ngIf="mbno.errors?.['pattern']" class="invalid-feedback">
+            Invalid Mobile number
+        </p>
+    </div>
+<br>
+
+<div class="form-group">
+    <label><b>Enter Password: </b></label>
+    <input type="text" name="pass" class="form-control" #pass="ngModel" ngModel required [ngClass]="{'is-invalid':frm.submitted && pass.invalid}"  [(ngModel)]="newpass">
+
+    <p *ngIf="frm.submitted && pass.invalid" class="invalid-feedback">Mandatory Field</p>
+</div>
+
+<br>
+<div class="form-group">
+    <label><b>Confirm Password: </b></label>
+    <input type="password" name="cpass" class="form-control" #cpass="ngModel" ngModel required  [ngClass]="{'is-invalid':frm.submitted && cpass.invalid}" [(ngModel)]="newcpass">
+
+    <p *ngIf="frm.submitted && cpass.invalid"  class="invalid-feedback">Mandatory Field</p>
+    <p *ngIf="!flag" class="incorrectPass">Password and Confirm Password are not Matching</p>
+</div>
+
+    <br>
+    <button class="btn btn-primary " *ngIf="flag">Sign Up</button>
+    <button class="btn btn-primary disabled" type="submit" *ngIf="!flag">Sign Up</button>
+</form>
+</div>

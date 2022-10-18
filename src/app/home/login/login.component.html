@@ -1,0 +1,30 @@
+<form name="myform" #frm="ngForm" (ngSubmit)="frm.form.valid && onSubmit(frm)" 
+    [ngClass]="cssclass">
+    <!-- <b>To Login in, Please Enter Your Mobile Number</b> -->
+
+    <div class="form-group">
+        <label><b>Enter Your Mobile Number : </b></label>
+
+        <input type="number" name="mbno" class="form-control" #mbno="ngModel" ngModel required
+            pattern="^((\\+91-?)|0)?[0-9]{10}$" [ngClass]="{'is-invalid':frm.submitted && mbno.invalid}"
+            placeholder="+91-  Mobile Number">
+
+        <p *ngIf="mbno.errors?.['required']" class="invalid-feedback">
+            This Field Can't be empty.
+        </p>
+        <p *ngIf="mbno.errors?.['pattern']" class="invalid-feedback">
+            Invalid Mobile number
+        </p>
+    </div>
+
+    <br>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-outline-primary">Login With OTP</button>
+        <br>
+        <button type="submit" class="btn btn-outline-primary" (click)="frm.form.valid &&  onGetPassword(frm)">Login With Password</button>
+    </div>
+    <br>
+    <span><b>First time user?</b> 
+    <button pButton type="button" label="Sign Up" class="p-button-text" (click)="onSignUp(frm)"></button></span>
+</form>
